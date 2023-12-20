@@ -1,0 +1,85 @@
+1- npm init -y
+2- npm install webpack webpack-cli --save-dev (npm install -D webpack-cli@5.1.4 webpack-dev-server@4.15.1)
+webpack используется только на этапе разработки, в продакшене он не используется, поэтому флаг -D и в девзависимостях
+
+3- npm i -D html-webpack-plugin
+
+HtmlWebpackPlugin - указывает путь до файла index.html, который является шаблоном
+ webpack.ProgressPlugin() - добавляет при сборке проценты прогресса (в продакшене не рекомендуют, так как может замедлять сборку)
+
+
+4- npm install --save-dev typescript@5.2.2 ts-loader@9.5.0 - для того, чтобы webpack понимал,
+файлы ts tsx
+
+5- npm install --save-dev ts-node @types/node @types/webpack
+6- npm install --save-dev @types/webpack-dev-server@4.7.2
+7- npm install --save-dev (typescript) - выше ставили ts-node@10.9.1 @types/node@20.8.3 @types/webpack@5.28.3- для того, чтобы
+можно было писать webpack.config на typescript
+
+
+esModuleInterop - позволяет работать с пакетами, которые используют common js как c обычными
+пакетами с помощью import
+
+esModuleInterop - если какая-либо библиотека не имеет default import, лоадеры вроде ts-loader, автоматически создают их вместо импорта
+import * as React from 'react'
+можно писать import React from React
+
+8- npm install --save-dev webpack-dev-server
+   npm install --save-dev webpack-dev-server@4.15.1
+
+npm run start -- --env port=5000 - для запуска переменной port = 5000
+
+
+9- npm i react@18.2.0 react-dom@18.2.0
+   npm i -D @types/react@18.2.25 @types/react-dom@18.2.11
+
+
+10- npm install --save-dev css-loader@6.8.1
+
+11- npm install --save-dev style-loader@3.3.3
+
+12- npm install sass-loader@13.3.2 sass@1.69.0 webpack --save-dev
+
+
+Этот плагин извлекает CSS в отдельные файлы. Он создает CSS-файл для каждого JS-файла, который содержит CSS. Он поддерживает загрузку CSS и исходных текстов по требованию.
+13 - npm install --save-dev mini-css-extract-plugin@2.7.6
+
+14 - npm i react-router-dom@6.16.0
+
+15 - npm install --save-dev webpack-bundle-analyzer@4.9.1
+16 - npm install --save-dev @types/webpack-bundle-analyzer
+
+npm run build:prod -- --env analyzer=true
+
+
+17 - npm install --save-dev @svgr/webpack@8.1.0
+
+new DefinePlugin - Заменяет переменные в вашем коде другими значениями или выражениями во время компиляции.
+
+
+tree shacking - webpack выпиливате тот код, который не используется. Т.е. если функция была определена,
+но не использовалась, то webpack ее сборке уберет
+
+
+Плагин Webpack, который запускает средство проверки типов TypeScript в отдельном процессе.
+18 - npm install --save-dev  fork-ts-checker-webpack-plugin@9.0.0
+
+Добавляет возможность обновлять контент без перезагрузки страницы в реальном времени
+19 - npm install -D @pmmmwh/react-refresh-webpack-plugin@0.5.11
+  с ts-loader
+npm install -D react-refresh-typescript@2.0.9
+
+Копирует отдельные файлы или целые каталоги, которые уже существуют, в каталог сборки.
+20 - npm install copy-webpack-plugin@11.0.0 --save-dev
+
+
+babel
+21 - npm install -D babel-loader@9.1.3 @babel/core@7.23.2
+
+babel preset typescript
+22 - npm install --save-dev @babel/preset-typescript@7.23.2
+
+23 - npm install --save-dev @babel/preset-react@7.22.15
+
+
+24 - npm i -D @types/babel__core@7.20.3
