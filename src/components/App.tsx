@@ -1,6 +1,6 @@
 import s from  './App.module.scss'
 import {Link, Outlet} from "react-router-dom";
-import About from "@/components/pages/about/About";
+import About from "@/pages/about/About";
 
 
 function todo1 () {
